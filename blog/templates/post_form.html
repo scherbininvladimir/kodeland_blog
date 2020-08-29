@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    {{ form.media }}
+{% endblock %}
+
+{% block section_1 %}
+    <h1>Добавить статью</h1>
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12 m8">            
+                {{ form.post_title.errors }}
+                {{ form.post_title}}
+                <label for="id_post_tilte">Введите название статьи</label>
+            </div>
+            <div class="input-field col s12 m4">
+                <input type="submit" class="btn button-publish" value="Опубликовать">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 m8">
+                    {{ form.post_text.errors}}
+                    {{ form.post_text}}    
+            </div>
+            <div class="input-field col s12 m4">
+                <div class="form-image">
+                    <h3>Загрузить изображение</h3>
+                    <div class="image-upload-box">
+                        {{ form.image.errors}}
+                        {{ form.image }}
+                        <label class="file-button" for="id_image">Файл</label>
+                    </div>
+                    <div class="image-preview-box">
+                        <div class="image-wrapper">
+                        <img class="responsive-img" id="image-preview" src=""/>
+                        <a class="btn-floating btn-small waves-effect waves-light grey clear_preview">X</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<script>
+    const input = document.querySelector('#id_image');
+    const button = document.querySelector('.clear_preview')
+    const preview_box = document.querySelector('.image-preview-box')
+    const upload_box = document.querySelector('.image-upload-box')
+    preview_box.hidden = true
+
+    input.addEventListener('change', function(e){
+        console.log('input changed')
+        if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (b) {
+                    document.querySelector('#image-preview').setAttribute('src', b.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+                preview_box.hidden = false
+                upload_box.hidden = true       
+        }
+    });
+    button.addEventListener('click', function(e){
+        input.value = ''
+        preview_box.hidden = true
+        upload_box.hidden = false 
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block section_1 %}
+    <div class="latest-article">
+        <span class="article_new">{{ first.post_datetime }}</span>
+        <div class="row">
+            <div class="col s12 m8">
+                <h1>
+                    {{ first.post_title }}
+                </h1>
+                {% autoescape off %}
+                    {{ first.post_text | truncatewords:50  }}
+                {% endautoescape %}    
+            </div>
+            <div class="col s12 m4">
+                {% if first.image %}
+                    <img class="responsive-img" src="{{ first.image.url }}" alt"Картинка">
+                {% endif %}
+            </div>
+        </div>
+        {% if first %}
+            <a class="button-read" href="{% url 'read' pk=first.id %}">Читать</a>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block section_2 %}
+    <h2>Другие статьи</h2>
+    <div class="row">
+        {% for post in object_list %}
+            <a href="{% url 'read' pk=post.id %}">        
+                    <div class="col s12 m6 l4">
+                        <div class="card medium white">
+                            <p>{{ post.post_datetime }}</p>
+                            <div class="card-image">
+                                {% if post.image %}
+                                <img src="{{ post.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="card-content">
+                                {{ post.post_title }}
+                            </div>
+                        </div>
+                    </div>
+            </a>
+            {% empty %}
+                No articles yet.
+        {% endfor %}
+
+    </div>
+
+    
+    
+{% endblock %}

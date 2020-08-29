@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block section_1 %}
+    <h2>{{ object.post_title }}</h2>
+    {% if object.image %}
+        <img class="responsive-img" src="{{ object.image.url }}" alt"Картинка">
+    {% endif %}
+    {% autoescape off %}
+        {{ object.post_text }}
+    {% endautoescape %}
+{% endblock %}
+
