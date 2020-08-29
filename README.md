@@ -1,7 +1,8 @@
 # kodeland_blog
 
 Настройка:
-'''
+
+```
 Пеерменные в .env
 
 DEBUG=0
@@ -14,4 +15,4 @@ SQL_PASSWORD=kodeland
 SQL_HOST=db
 SQL_PORT=5432
 DATABASE=postgres
-'''
+```
