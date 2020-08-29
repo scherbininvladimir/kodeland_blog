@@ -1,0 +1,139 @@
+body {
+    font-family: Circe Rounded;
+}
+h1  {
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+h2 {
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    align-items: center;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+h3 {
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    align-items: center;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+header {
+    padding: 20px 0;
+}
+
+.headr__blog {
+    margin-left: 10px;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.button-create {
+    padding: 7px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: #315AF2;
+    line-height: 19px;
+}
+
+.divider {
+    margin: 20px;
+    border: 2px solid #CDCDCD;
+}
+
+.latest-article {
+    margin-bottom: 50px;
+}
+.article_new {
+    color: #E9399C;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.button-read {
+    padding: 10px 25px;
+    color: white;
+    border-radius: 6px;
+    background-color: #315AF2;
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.416667px;
+}
+
+.card-content {
+    font-size: 24px;
+    line-height: 120%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+.button-publish {
+    padding: 7px 20px;
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: #E9399C;
+    border-radius: 3px;
+    text-transform: capitalize
+}
+
+.button-publish:hover {
+    background-color: #E9399C;
+}
+
+.form-image {
+    border: 2px solid #CDCDCD;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#id_image {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-button {
+    padding: 15px 30px;
+    margin-bottom: 10px;
+    background: #315AF2;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    cursor: pointer; 
+}
+
+.image-preview-box {
+    position: relative;
+}
+.clear_preview {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
